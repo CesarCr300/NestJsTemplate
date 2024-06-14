@@ -1,7 +1,6 @@
 import { EntityBase } from '../../../base/entity.base';
 import {
   Column,
-  DeleteDateColumn,
   Entity,
   JoinColumn,
   ManyToOne,
@@ -27,8 +26,6 @@ export class User extends AuditoryEntity implements EntityBase {
 
   @Column({ name: 'int_user_type_id' })
   userTypeId: number;
-  @DeleteDateColumn({ name: 'dat_deleted_at' })
-  deletedAt: Date;
 
   @ManyToOne(() => UserType, (type) => type.users)
   @JoinColumn({ name: 'int_user_type_id' })
